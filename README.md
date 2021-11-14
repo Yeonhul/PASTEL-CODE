@@ -35,12 +35,6 @@
 ---
 
 
-
-
-## 시작 전 
-
-> src -> img.zip 압축해제 
-
 <br>
 
 ## Project setup
