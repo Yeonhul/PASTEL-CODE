@@ -1,0 +1,79 @@
+@include pc {
+    .pick_p {
+        @include size(100%);
+        @include pos(relative);
+        @include padding($l : $hw_pc + 20px);
+        @include margin($t : 30px, $b : 30px);
+        &.pick_none {
+            @include pos(relative);
+            @include size(100%, 100vh);
+            @include margin($all : 0);
+            > .what_pick {
+                @include pos(absolute, $t : 50%, $l : 50%, $trX : -50%, $trY : -50%);
+                @include font($s : 1.5rem, $f : ne, $w : 700)
+            }
+        }
+        > h1 {
+            @include font($s : 2rem, $lh : 4rem, $w : 700, $f : bi);
+            @include margin($b : 20px);
+        }
+        .pick_box {
+            @include flex($gx : 30px, $gy : 30px);
+            .hex_box {
+                @include size($cw_pc, $ch_pc);
+                .hex_card {
+                    @include size(100%, 100%);
+                    overflow: hidden;
+                    background-color: #fff;
+                    box-shadow: 10px 10px 0 $point_color;
+                    @include padding($all : 20px);
+                    @include border($px : 1px, $color : $point_color);
+                    $cw_pc : $cw_pc - 40px;
+                    > img {
+                        @include size($cw_pc, $cw_pc);
+                    }
+                    > p {
+                        @include size($cw_pc,40px);
+                        letter-spacing: 2px;
+                        @include flex($a : center);
+                        @include font($w : 700, $f : bi);
+                    }
+                }
+            }
+        }
+        
+    }
+};
+
+@include mobile {
+    .pick_p {
+        @include size(100%);
+        @include pos(relative);
+        @include padding($t : $hh_m);
+        &.pick_none {
+            @include size(100%, 100vh);
+            > .what_pick {
+                @include pos(absolute, $t : 50%, $l : 50%, $trX : -50%, $trY : -50%);
+                @include font($s : 1.5rem, $f : ne, $w : 700);
+                white-space : nowrap;
+            }
+        }
+        > h1 {
+            @include font($s : 1.5rem, $lh : 3rem, $w : 700, $f : bi);
+            @include margin($b : 10px);
+            @include padding($all : 0 5%);
+        }
+        .pick_box {
+            // @include size(100%, 100%);
+            @include flex($gx : 30px, $gy : 30px);
+            @include padding($all : 0 5%);
+            @include landscape {
+                @include flex($j : center, $gx : 30px, $gy : 30px);
+                @include padding($all : 0 2%);
+            }
+            @include margin($b : 30px);
+            
+        }
+        
+    }
+}

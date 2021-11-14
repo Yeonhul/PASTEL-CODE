@@ -1,0 +1,163 @@
+@include pc() {
+    .login {
+        @include padding($l : $hw_pc + 10px, $t : 5px);
+        @include font($f : bi, $s : 1.1rem, $lh : 1.5rem);
+        .log_box {
+            .not {
+                @include flex($gx : 10px, $gy : 0);
+                > p {
+                    @include font($f : bi, $w : 700, $s : 1.2rem, $c : #FD475D);
+                }
+                .in_bt {
+                    @include flex($gx : 10px, $gy : 0px);
+                    > input {
+                        @include font($f : ne, $w : 700, $s : .8rem);
+                        &.input_t {
+                            @include size($hw_pc - 10px);
+                            @include border(1px, $rad : 5px);
+                            @include padding($l : 7px);
+                        }
+                        &::placeholder {
+                            @include font($f : ne, $w : 700, $s : .6rem);
+                        }
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                }
+                .act_bt {
+                    @include flex($gx : 10px, $gy : 0, $a : center);
+                    > input {
+                        @include size(60px,20px);
+                        @include border($rad : 3px,);
+                        @include font($s : .8rem, $f : ne, $w : 700, $c : #fff);
+                        background-color: rgba($color: #000, $alpha: 1);
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+                
+                > p {
+                    @include font($f : ne, $w : 700, $s : 1rem)
+                }
+
+            }
+            .success {
+                @include flex($gx : 10px);
+                > input {
+                    @include size(60px,20px);
+                    @include border($rad : 3px);
+                    @include font($s : .8rem, $f : ne, $w : 700, $c : #fff);
+                    background-color: rgba($color: #000, $alpha: 1);
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+@include mobile() {
+    .login {
+        @include size($w : 100%, $h : 100vh);
+        @include pos(fixed);
+        z-index: 100;
+        background-color: rgba($color: #000000, $alpha: .7);
+        @include landscape {
+            @include flex();
+        }
+        .mobile_title {
+            @include size(100%, 40vh);
+            @include flex($j : center, $a : center,);
+            @include font($f : bi, $w : 700, $s : 1.8rem, $c : #fff);
+            @include landscape {
+                @include size(50%, 100%);
+            }
+            .close {
+                @include size(100%, ($hh_m / 2));
+                @include pos(absolute, $t : 0, $l : 0);
+                @include flex($a : center);
+                > span {
+                    @include pos(absolute, $r : 5%);
+                    @include size(20px, 20px);
+                    > svg {
+                        @include pos(absolute, $t : 50%, $trX : 0%, $trY : -50%);
+                    }
+                }
+            }
+
+
+        }
+        .log_box {
+            @include flex($gx : 10px, $gy : 0, $j : center);
+            @include size(100%, 60vh);
+            @include landscape {
+                @include size(50%, 100%);
+                @include flex($gx : 10px, $gy : 0, $j : center, $a : center);
+            }
+            .not {
+                @include flex($fd : column);
+                > p {
+                    @include font($f : bi, $w : 700, $s : 1.2rem, $c : #FD475D);
+                    @include padding($t : 10px);
+                }
+                .in_bt {
+                    @include flex($gx : 0, $gy : 20px, $fd : column, $a : center);
+                    @include padding($b : 10px);
+                    > input {
+                        @include font($f : ne, $w : 700, $s : .8rem, $c : #fff);
+                        @include size(150px, 30px);
+                        @include border(1px, $rad : 5px, $color : #EDEAE5);
+                        background-color: rgba($color: #000000, $alpha: 0);
+                        &::placeholder {
+                            @include padding($l : 7px);
+                            @include font($f : ne, $w : 700, $s : .6rem, $c : #EDEAE5);
+                        }
+                        &:focus {
+                            outline : none;
+                        }
+                        @include landscape {
+                            @include size(200px, 30px);
+                        }
+                    }
+                }
+                .act_bt {
+                    @include flex($gx : 10px, $gy : 0, $j : center);
+                    > input {
+                        @include size(55px, 20px);
+                        @include font($f : ne, $c : #fff);
+                        @include border(1px, $color : #fff, $rad : 2px,);
+                        background-color: rgba($color: #000000, $alpha: 0);
+                    }
+                }
+
+            }
+            .success {
+                @include flex($fd : column, $a : center,);
+                > p {
+                    @include font($f : bi, $s : 1.8rem, $c : #fff);
+                    @include padding($all : 15px 0px);
+                }
+                > input {
+                    @include size(55px, 20px);
+                    @include font($f : ne, $w : 700, $s : .8rem, $c : #fff);
+                    @include border(1px, $color : #fff, $rad : 2px,);
+                    background-color: rgba($color: #000000, $alpha: 0);
+                }
+            }
+        }
+    }
+
+    .demo-enter-from, .demo-leave-to {
+        transform: translateY(100%);
+    }
+    .demo-enter-to, .demo-leave-from  {
+        transform: translateY(0%);
+    }
+    .demo-enter-active, .demo-leave-active {
+        transition: all .3s;
+    }
+}
