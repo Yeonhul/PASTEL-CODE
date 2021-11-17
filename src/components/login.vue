@@ -93,7 +93,6 @@ export default {
             history.back();
             this.$store.commit('mobile_TF')
         },
-
     },
     mounted() {
     },

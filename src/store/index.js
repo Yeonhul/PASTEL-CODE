@@ -109,8 +109,6 @@ export default createStore({
             commit('mobile_menu');
             commit('resize');
         },
-
-
     },
     modules: {
 
@@ -148,7 +146,7 @@ export default createStore({
         },
         pick_page(state) {
             return state.ColorList.filter((x => x.tf == false));
-        }
+        } 
     },
     
     plugins: [
