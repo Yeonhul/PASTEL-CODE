@@ -69,7 +69,7 @@ export default {
         join() { // 회원가입
             var user_data = {
                 u_id : this.user_id.trim(), 
-                u_password : this.user_password
+                u_password : this.user_password.trim()
             }
             if(user_data.u_id != '' && user_data.u_password != ''){ 
                 this.axios.post('/api/join', user_data)
