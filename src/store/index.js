@@ -56,6 +56,8 @@ export default createStore({
         },
         pick_tf(state, num) {  // pick 클릭 시 해당 하트 즉시 반영
             switch (state.ColorList[num].tf) {
+                // case true : return state.ColorPick.push(state.ColorList[num]);
+                // case false : return state.ColorList[num].tf = true;
                 case true : return state.ColorList[num].tf = false;
                 case false : return state.ColorList[num].tf = true;
             }
@@ -69,9 +71,9 @@ export default createStore({
                 state.ColorList[a.hex_index].tf = false;
             })
         },
-        logout(state) { // 로그아웃
+        logout(state, data) { // 로그아웃
             state.login_check = '';
-            state.ColorPick.forEach(function(a) {
+            data.forEach(function(a) {
                 state.ColorList[a.hex_index].tf = true;
             })
             state.ColorPick = [];
@@ -92,10 +94,12 @@ export default createStore({
         }
     },
     actions: {
-        user_color({commit}, user) { // 로그인 승인 시 실행됨 
+        user_color({commit}, user) { // 로그인, 로그아웃 시 실행
+            console.log('1 : ',user.u_password);
             axios.post('/api/pick/check', user)
             .then(res => {
-                commit('login_color', res.data);
+                user.u_password != undefined ? 
+                commit('login_color', res.data) :  commit('logout',res.data);
             })
             .catch(err => {
                 console.log(err);
@@ -104,7 +108,9 @@ export default createStore({
         m_menu({commit}) { // mobile-resize 이벤트 초기값설정
             commit('mobile_menu');
             commit('resize');
-        }
+        },
+
+
     },
     modules: {
 
@@ -143,8 +149,6 @@ export default createStore({
         pick_page(state) {
             return state.ColorList.filter((x => x.tf == false));
         }
-
-
     },
     
     plugins: [

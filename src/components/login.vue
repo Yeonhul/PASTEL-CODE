@@ -84,9 +84,12 @@ export default {
             }
         },
         logout() { // 로그아웃
-            this.$store.commit('logout');
+            var user_data = {
+                u_id : this.$store.state.login_check
+            }
+            this.$store.dispatch('user_color', user_data);
         },
-        login_bt() {
+        login_bt() { 
             history.back();
             this.$store.commit('mobile_TF')
         },
