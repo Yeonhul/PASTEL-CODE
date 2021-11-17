@@ -74,7 +74,7 @@ export default {
             if(user_data.u_id != '' && user_data.u_password != ''){ 
                 this.axios.post('/api/join', user_data)
                 .then(res => {
-                    this.login_errer = res.data;
+                    this.login_errer = res.data; 
                 })
                 .catch(err => {
                     console.log(err);
