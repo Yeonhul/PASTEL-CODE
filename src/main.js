@@ -7,7 +7,8 @@ import login from '@/components/login.vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import '@fortawesome/fontawesome-free/js/all.js' //awesome font
-axios.defaults.baseURL = "https://personal-node-project.herokuapp.com/";
+// axios.defaults.baseURL = "https://personal-node-project.herokuapp.com/";
+axios.defaults.baseURL = "http://localhost:3000/";
 
 
 createApp(App)
