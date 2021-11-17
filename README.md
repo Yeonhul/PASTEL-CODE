@@ -32,6 +32,8 @@
 <br>
 
 #### Node, DB(MYSQL)연동 로그인, 회원가입 기능추가, PICK기능 계정단위로 변경, 오류수정
+
+#### Node 코드 https://github.com/Yeonhul/PASTEL-NODE-CODE
 ---
 
 
