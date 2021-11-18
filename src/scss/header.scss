@@ -10,27 +10,27 @@ $h_point : linear-gradient(to right, #CCAACB 5%, black 5%);
         @include padding($t : 140px);
         @include font($s : 2rem, $f : bi);
 
-        .h_box {
-            @include flex($fd : column);
-            @include margin($t : 30px);
+        // .h_box {
+        //     @include flex($fd : column);
+        //     @include margin($t : 30px);
 
-            > input {
-                @include size($w : $hw_pc - 10px, $h : 30px);
-                background-color: #000;
-                cursor: pointer;
-                transition: all .25s;
-                @include font($c : #fff, $ca : .5, $s : 1.1rem, $f : bi);
-                @include border();
-                @include margin($b : 20px);
-                &:hover {
-                    @include font($c : #fff, $ca : .8);
-                }
-                &.h_E{
-                    color : $base-color;
-                    background: $h_point;
-                }
-            }
-        }
+        //     > input {
+        //         @include size($w : $hw_pc - 10px, $h : 30px);
+        //         background-color: #000;
+        //         cursor: pointer;
+        //         transition: all .25s;
+        //         @include font($c : #fff, $ca : .5, $s : 1.1rem, $f : bi);
+        //         @include border();
+        //         @include margin($b : 20px);
+        //         &:hover {
+        //             @include font($c : #fff, $ca : .8);
+        //         }
+        //         &.h_E{
+        //             color : $base-color;
+        //             background: $h_point;
+        //         }
+        //     }
+        // }
 
     }
 }

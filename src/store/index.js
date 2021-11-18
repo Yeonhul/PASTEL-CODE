@@ -21,6 +21,7 @@ export default createStore({
         ColorPick : [],
         login_TF : false,
         mobile : true, // resize 이벤트
+        menu_bt : 0, //버튼
     },
     mutations: {
         resize(state) { // resize 이벤트

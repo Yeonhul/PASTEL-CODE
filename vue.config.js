@@ -6,7 +6,7 @@ module.exports = {
     devServer: {
         disableHostCheck: true, // 원격서버 접속 허용 || lt 사용시 허용하게함 
     },
-    publicPath : '/vue_PASTEL', //github올릴때
+    // publicPath : '/vue_PASTEL', //github올릴때
     css : { //scss 전역사용
         loaderOptions : {
             sass : {

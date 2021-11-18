@@ -4,6 +4,7 @@ import router from '@/router'
 import store from '@/store'
 import head from '@/components/header.vue'
 import login from '@/components/login.vue'
+import menu from '@/components/menu.vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import '@fortawesome/fontawesome-free/js/all.js' //awesome font
@@ -16,4 +17,5 @@ createApp(App)
 .use(VueAxios, axios)
 .component('He-der', head)
 .component('LoginComponent',login)
+.component('Menu',menu)
 .mount('#app');

@@ -6,10 +6,11 @@
                 <i class="fas fa-user"></i>
             </span>
         </div>
-        <div class="h_box">
+        <!-- <div class="h_box">
             <input :class="['h_bt', b_class(h_dex)]" type="button" v-for="(m, h_dex) 
             in menu" :key="h_dex" :value="m" @click="m_click(m, h_dex)">
-        </div>
+        </div> -->
+        <slot></slot>
         <!-- <LoginComponent /> -->
     </div>
 </template>

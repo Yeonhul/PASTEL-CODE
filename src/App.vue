@@ -1,8 +1,11 @@
 <template>
   <div>
-    <He-der />
+    <He-der>
+      <Menu v-if="$store.state.mobile" />
+    </He-der>
     <LoginComponent />
     <router-view></router-view>
+    <Menu v-if="!$store.state.mobile" />
   </div>
 </template>
 
@@ -20,4 +23,5 @@ export default {
 @import '@/scss/content.scss';
 @import '@/scss/pick.scss';
 @import '@/scss/login.scss';
+@import '@/scss/menu.scss';
 </style>
