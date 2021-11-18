@@ -22,6 +22,8 @@ export default createStore({
         login_TF : false,
         mobile : true, // resize 이벤트
         menu_bt : 0, //menu-component count
+        router_list : ['MAIN', 'COLOR_LIST', 'PICK', 'LOGIN'], // router list
+
     },
     mutations: {
         resize(state) { // resize 이벤트
@@ -92,6 +94,13 @@ export default createStore({
         popstate_event(state) { // popstate이벤트 실행 시 실행
             state.login_TF && state.width_resize < 1024 ? state.login_TF = false : 0;
             state.TF && state.width_resize < 1024 ? state.TF = false : 0;
+        },
+        menu_count(state, index) {
+            state.menu_bt = index;
+        },
+        menu_count_load(state, name) {
+            name == undefined ?
+            0 : state.menu_bt = state.router_list.indexOf(name.toUpperCase());
         }
     },
     actions: {
