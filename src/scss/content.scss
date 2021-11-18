@@ -127,7 +127,7 @@ $point_color : #e5e1e0;
         @include size(100%);
         @include font($f : bi);
         background-color: #fff;
-        @include padding($t : $hh_m);
+        // @include padding($t : $hh_m); 
         @include margin($b : 30px);
         @include pos(relative);
         .con1_search {

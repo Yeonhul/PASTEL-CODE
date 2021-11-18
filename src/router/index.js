@@ -6,6 +6,7 @@ import { createWebHashHistory, createRouter } from 'vue-router'
 const mainpage = () => import('@/views/main.vue'); //Lazy load
 const COLOR_LIST = () => import('@/views/content1.vue'); //Lazy load
 const pickpage = () => import('@/views/pick.vue');
+const loginpage = () => import('@/components/login.vue');
 
 const routes = [
     {
@@ -25,6 +26,11 @@ const routes = [
         name : 'pick',
         component : pickpage,
     },
+    {
+        path : '/login',
+        name : 'login',
+        component : loginpage
+    }
 
 ]
 

@@ -100,7 +100,7 @@ $point_color : #e5e1e0;
             background-color: $banner_color;
             @include pos(relative);
             @include flex($a : center, $j : center);
-            @include margin($t : $hh_m);
+            // @include margin($t : $hh_m);
             > p {
                 display : inline-block;
                 letter-spacing: 10px;

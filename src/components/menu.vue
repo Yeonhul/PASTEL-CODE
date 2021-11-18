@@ -12,7 +12,7 @@
 export default {
     data() {
         return {
-            menu_list : ['MAIN', 'COLOR_LIST', 'PICK'], // router list
+            menu_list : ['MAIN', 'COLOR_LIST', 'PICK', 'LOGIN'], // router list
             header_TF : false, // 모바일용 header 이벤트 (스크롤)
             b_count : 0, // 버튼 활성화 체크 
         }
@@ -31,8 +31,6 @@ export default {
             name == undefined ? 
             0 : this.$store.state.menu_bt = this.menu_list.indexOf(name.toUpperCase()); //!!!!
         },
-
-
     },
     mounted() {
         window.addEventListener('onload', this.load); //onload

@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from '@/router'
 import store from '@/store'
 import head from '@/components/header.vue'
-import login from '@/components/login.vue'
+// import login from '@/components/login.vue'
 import menu from '@/components/menu.vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
@@ -16,6 +16,6 @@ createApp(App)
 .use(router)
 .use(VueAxios, axios)
 .component('He-der', head)
-.component('LoginComponent',login)
+// .component('LoginComponent',login)
 .component('Menu',menu)
 .mount('#app');

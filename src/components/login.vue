@@ -1,5 +1,5 @@
 <template>
-<transition name="demo">
+<!-- <transition name="demo"> -->
     <div class="login" v-if="$store.state.login_TF">
         <div class="mobile_title" v-if="!$store.state.TF">
             <div class="close"> 
@@ -31,7 +31,7 @@
             </div>
         </form>
     </div>
-</transition>
+<!-- </transition> -->
 </template>
 
 <script>
