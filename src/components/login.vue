@@ -1,6 +1,7 @@
 <template>
 <!-- <transition name="demo"> -->
-    <div class="login" v-if="$store.state.login_TF">
+    <!-- <div class="login" v-if="$store.state.login_TF"> -->
+    <div class="login">
         <div class="mobile_title" v-if="!$store.state.TF">
             <div class="close"> 
                 <span @click="login_bt()">

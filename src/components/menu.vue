@@ -1,6 +1,5 @@
 <template>
     <div class="menu">
-        <!-- <p>메뉴</p> -->
         <div class="h_box">
             <input :class="['h_bt', b_class(h_dex)]" type="button" v-for="(m, h_dex) 
             in menu_list" :key="h_dex" :value="m" @click="m_click(m, h_dex)">

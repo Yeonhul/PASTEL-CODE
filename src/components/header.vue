@@ -2,9 +2,9 @@
     <div :class="['header', {'h_E': header_TF}]">
         <div class="title">
             <h1>PASTEL</h1>
-            <span class="close" v-if="!$store.state.TF" @click="login_bt()">
+            <!-- <span class="close" v-if="!$store.state.TF" @click="login_bt()">
                 <i class="fas fa-user"></i>
-            </span>
+            </span> -->
         </div>
         <!-- <div class="h_box">
             <input :class="['h_bt', b_class(h_dex)]" type="button" v-for="(m, h_dex) 
