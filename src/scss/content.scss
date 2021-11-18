@@ -151,12 +151,12 @@ $point_color : #e5e1e0;
         }
     }
     .alert {
-        @include size(90%, 95%);
+        @include size(90%, 85%);
         min-width: 290px;
         z-index : 100;
         background-color: $point_color;
         @include flex($fd : column, $a : center);
-        @include pos(fixed, $t : 50%, $l : 50%, $trX : -50%, $trY : -50%);
+        @include pos(fixed, $t : 45%, $l : 50%, $trX : -50%, $trY : -50%);
         @include border(1px, $color : $point_color);
         @include font($f : bi);
         .a_img {
