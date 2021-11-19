@@ -22,7 +22,7 @@ export default createStore({
         login_TF : false,
         mobile : true, // resize 이벤트
         menu_bt : 0, //menu-component count
-        router_list : ['MAIN', 'COLOR_LIST', 'PICK', 'LOGIN'], // router list
+        router_list : ['MAIN', 'COLOR LIST', 'PICK', 'LOGIN'], // router list
 
     },
     mutations: {
@@ -33,6 +33,7 @@ export default createStore({
                 state.TF = false;
                 state.login_TF = false; 
             }else if(!state.mobile && state.width_resize >= 1024) {
+                // state.TF ? history.back() : 0; //모바일 > pc 사이즈 이동 시 주소창 조절 !!!!! 다른방법 확인 필요함 || 문제 : 최초 디바이스 진입 시 실행됨
                 state.mobile = true;
                 state.TF = true;
                 state.login_TF = true;

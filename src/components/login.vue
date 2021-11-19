@@ -3,11 +3,12 @@
     <!-- <div class="login" v-if="$store.state.login_TF"> -->
     <div class="login">
         <div class="mobile_title" v-if="!$store.state.TF">
-            <div class="close"> 
+            <!-- 모바일 close 버튼 -->
+            <!-- <div class="close"> 
                 <span @click="login_bt()">
                     <i class="fas fa-times"></i>
-                </span> <!-- 모바일 close 버튼 -->
-            </div>
+                </span>
+            </div> -->
             <h1>Login</h1>
         </div>
         <form class="log_box">
@@ -85,15 +86,16 @@ export default {
             }
         },
         logout() { // 로그아웃
+            console.log('aasdasdasd')
             var user_data = {
                 u_id : this.$store.state.login_check
             }
             this.$store.dispatch('user_color', user_data);
         },
-        login_bt() { 
-            history.back();
-            this.$store.commit('mobile_TF')
-        },
+        // login_bt() { 
+        //     history.back();
+        //     this.$store.commit('mobile_TF')
+        // },
     },
     mounted() {
     },

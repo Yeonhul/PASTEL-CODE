@@ -20,7 +20,6 @@
             <p class="a_name" :style="c_title">{{c_name}}
                 <em v-if="this.$store.state.login_check" :class="['heart', {'pick' : icon }]" @click="heart_event()"></em>
             </p> 
-            
             <div class="rgb">
                 <div class="rgb_c rgb_r" :style="c_red">{{$store.state.choice_r}} ({{ t_red }}%)</div>
             </div>
@@ -31,7 +30,7 @@
                 <div class="rgb_c rgb_b" :style="c_blue">{{$store.state.choice_b}} ({{ t_blue }}%)</div>
             </div>
             <input type="button" value="HEX COPY" @click="copy(c_name)">
-            <input type="button" value="Check the sim   ilar hex" @click="similar()">
+            <input type="button" value="Check the similar hex" @click="similar()">
             <div class="close" @click="close()"><span></span><span></span></div>
         </div>
     </div>

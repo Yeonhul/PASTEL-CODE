@@ -17,7 +17,7 @@ const routes = [
 
     {
         path: '/ColorList', 
-        name: 'color_list', 
+        name: 'color list', 
         component: COLOR_LIST, 
     },
 
