@@ -86,7 +86,6 @@ export default {
             }
         },
         logout() { // 로그아웃
-            console.log('aasdasdasd')
             var user_data = {
                 u_id : this.$store.state.login_check
             }

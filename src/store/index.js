@@ -7,7 +7,7 @@ export default createStore({
     state: {
         width_resize : 0,
         height_resize : 0,
-        TF : true,
+        TF : false,
         ColorList : ColorSet,
         search : '',
         choice_r : 0,
@@ -33,7 +33,7 @@ export default createStore({
                 state.TF = false;
                 state.login_TF = false; 
             }else if(!state.mobile && state.width_resize >= 1024) {
-                // state.TF ? history.back() : 0; //모바일 > pc 사이즈 이동 시 주소창 조절 !!!!! 다른방법 확인 필요함 || 문제 : 최초 디바이스 진입 시 실행됨
+                state.TF ? history.back() : 0; //모바일 > pc 사이즈 이동 시 주소창 조절 !!!!! 다른방법 확인 필요함 || 문제 : 최초 디바이스 진입 시 실행됨
                 state.mobile = true;
                 state.TF = true;
                 state.login_TF = true;
@@ -106,11 +106,10 @@ export default createStore({
     },
     actions: {
         user_color({commit}, user) { // 로그인, 로그아웃 시 실행
-            console.log('1 : ',user.u_password);
             axios.post('/api/pick/check', user)
             .then(res => {
                 user.u_password != undefined ? 
-                commit('login_color', res.data) :  commit('logout',res.data);
+                commit('login_color', res.data) : commit('logout',res.data);
             })
             .catch(err => {
                 console.log(err);

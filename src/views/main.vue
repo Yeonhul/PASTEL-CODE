@@ -41,7 +41,7 @@ export default {
     methods: {
         link_c(color) {
             this.$store.commit('toss', color); 
-            this.$router.push({name: 'color_list'});
+            this.$router.push({name: 'color list'});
         },
         li_class(index) {
             let colorData = this.$store.state.ColorList[this.$store.state.box[index]];

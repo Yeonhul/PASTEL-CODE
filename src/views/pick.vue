@@ -22,7 +22,7 @@ export default {
     methods : { 
         link_c(hex) {
             this.$store.commit('toss', hex);
-            this.$router.push({name : 'color_list'})
+            this.$router.push({name : 'color list'})
         },
     },
     computed : {

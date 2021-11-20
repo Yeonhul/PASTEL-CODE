@@ -3,7 +3,6 @@
     <He-der>
       <Menu v-if="$store.state.mobile" />
     </He-der>
-    <!-- <LoginComponent /> -->
     <router-view></router-view>
     <Menu v-if="!$store.state.mobile" />
   </div>

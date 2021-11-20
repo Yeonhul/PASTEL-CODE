@@ -42,6 +42,7 @@ export default {
         // },
         
         resize_event() { //resize 이벤트
+            console.log('aasdasd');
             this.$store.commit('resize');
         },
 
