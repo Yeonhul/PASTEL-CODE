@@ -3,6 +3,7 @@ $h_point : linear-gradient(to right, #CCAACB 5%, black 5%);
 @include pc {
     .header {
         @include size($w : $hw_pc, $h : 100vh);
+        min-height: 410px;
         z-index : 100;
         background-color: $base-color;
         @include pos($p : fixed, $t : 0, $l : 0);

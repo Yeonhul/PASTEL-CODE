@@ -50,7 +50,7 @@ $point_color : #e5e1e0;
         @include pos(fixed, $t : 0, $r : 0);
         @include flex($fd : column, $a : center,);
         @include border($l : 1px , $color : $point_color);
-        @include font($f : bi);
+        @include font($f : bi2);
         .a_img {
             @include size(100%, 100%);
             overflow: hidden;
@@ -158,7 +158,7 @@ $point_color : #e5e1e0;
         @include flex($fd : column, $a : center);
         @include pos(fixed, $t : 45%, $l : 50%, $trX : -50%, $trY : -50%);
         @include border(1px, $color : $point_color);
-        @include font($f : bi);
+        @include font($f : bi2);
         .a_img {
             @include size(100%, 100%);
             overflow: hidden;

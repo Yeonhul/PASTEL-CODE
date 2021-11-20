@@ -24,20 +24,26 @@
 
 @include mobile() {
     .menu {
-        @include size(100%, 50px);
+        @include size(100%, $hh_m / 2);
         @include pos(fixed, $b : 0, $l : 0);
         @include flex($a : center, $j : center);
         z-index: 100;
         .h_box {
-            @include size($w : 100%, $h : ($hh_m / 2));
-            @include flex($a : center, $j : center, $gx : 10px, $gy : 0px);
+            background-color: #f9f5f2;
+            @include padding($all : 0 20px);
+            @include size($w : 100%, $h : 100%);
+            @include flex($a : center, $gx : 12px, $gy : 0px);
+            border :  {
+                top-left-radius : 5px;
+                top-right-radius: 5px;
+            }
             flex-wrap: nowrap;
             > input {
-                @include size($w : 95px, $h : 25px);
+                @include size($w : calc(100% / 4 - 9px), $h : 25px);
                 background-color: #000;
                 cursor: pointer;
                 transition: all .25s;
-                @include font($s : .9rem, $f : bi, $c : #fff, $ca : .5);
+                @include font($s : .6rem, $f : bi, $c : #fff, $ca : .5);
                 @include border();
                 &.h_E {
                     color : $base-color;

@@ -152,7 +152,7 @@ $input-height : 48px;
                 @include size(100%);
                 @include flex($fd : column, $a : center,);
                 > p {
-                    @include font($f : ne, $s : 1.8rem, $w : 700);
+                    @include font($f : ne, $s : 1.5rem, $w : 700);
                     @include padding($all : 15px 0px);
                 }
                 > input {
