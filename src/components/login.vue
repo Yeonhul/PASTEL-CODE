@@ -2,16 +2,11 @@
 <!-- <transition name="demo"> -->
     <!-- <div class="login" v-if="$store.state.login_TF"> -->
     <div class="login">
-        <div class="mobile_title" v-if="!$store.state.TF">
-            <!-- 모바일 close 버튼 -->
-            <!-- <div class="close"> 
-                <span @click="login_bt()">
-                    <i class="fas fa-times"></i>
-                </span>
-            </div> -->
-            <h1>Login</h1>
-        </div>
+        <!-- <div class="mobile_title" v-if="!$store.state.TF"> 모바일에서 수정할것-->
+        <!-- </div> -->
+
         <form class="log_box">
+            <h1>PASTEL 회원 로그인</h1>
             <div class="not" v-if="not_login"> <!-- 비로그인 상태 -->
                 <div class="in_bt">
                     <input type="text" v-model="user_id" 
@@ -20,8 +15,8 @@
                     placeholder="PASSWORD" autocomplete="on" @keyup.enter="login()">
                 </div>
                 <div class="act_bt">
-                    <input type="button" value="Login" @click="login()"> 
-                    <input type="button" value="Join" @click="join()">
+                    <input type="button" value="로그인" @click="login()"> 
+                    <input type="button" value="회원가입" @click="join()">
                 </div>
                 <p v-if="login_errer">
                     <i class="fas fa-exclamation-circle"></i> {{ login_errer }}

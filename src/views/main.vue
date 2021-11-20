@@ -3,7 +3,7 @@
         <div class="banner">
             <p>PASTEL <em> PALETTE</em></p>
             <div  class="mc_box">
-                <li class="mc_li" v-for="(n, index) in 6" 
+                <li class="mc_li" v-for="(n, index) in $store.state.box.length" 
                 :key="index" :style="[ style_TF ? li_class(index) : 0]"></li>
             </div>
             </div>

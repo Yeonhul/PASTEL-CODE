@@ -1,22 +1,32 @@
+$input-height : 48px;
 @include pc() {
     .login {
-        @include padding($l : $hw_pc + 10px, $t : 5px);
-        @include font($f : bi, $s : 1.1rem, $lh : 1.5rem);
+        @include size(100%, 100vh);
+        // background-color: #f9f5f2;
+        @include font($f : ne, $s : 1.1rem, $lh : 1.5rem, $w : 700);
+        @include flex($a : center, $j : center);
         .log_box {
+            z-index: 1;
+            text-align: center;
+            > h1 {
+                @include margin($b : 30px);
+            }
             .not {
-                @include flex($gx : 10px, $gy : 0);
+                min-width: 350px;
+                max-width : 490px;
+                @include flex($fd : column, $a : center, $gx : 0, $gy : 30px);
                 > p {
                     @include font($f : bi, $w : 700, $s : 1.2rem, $c : #FD475D);
                 }
                 .in_bt {
-                    @include flex($gx : 10px, $gy : 0px);
+                    @include size(100%, 100%);
+                    @include flex($fd : column, $gx : 0px, $gy : 10px);
                     > input {
                         @include font($f : ne, $w : 700, $s : .8rem);
-                        &.input_t {
-                            @include size($hw_pc - 10px);
-                            @include border(1px, $rad : 5px);
-                            @include padding($l : 7px);
-                        }
+                        @include size(100%, $input-height);
+                        @include border(1px, $rad : 5px);
+                        @include padding($l : 7px);
+
                         &::placeholder {
                             @include font($f : ne, $w : 700, $s : .6rem);
                         }
@@ -26,9 +36,17 @@
                     }
                 }
                 .act_bt {
-                    @include flex($gx : 10px, $gy : 0, $a : center);
+                    @include size(100%, 100%);
+                    @include flex($gx : 0, $gy : 20px, $a : center, $fd : column);
+                    @include pos(relative);
+                    &::before {
+                        content : '';
+                        @include size(100%, 1px);
+                        @include pos(absolute, $t : 50%, $trX : 0, $trY : -50%);
+                        background-color: #9d9d9d;
+                    }
                     > input {
-                        @include size(60px,20px);
+                        @include size(100%, $input-height);
                         @include border($rad : 3px,);
                         @include font($s : .8rem, $f : ne, $w : 700, $c : #fff);
                         background-color: rgba($color: #000, $alpha: 1);
@@ -44,9 +62,15 @@
 
             }
             .success {
-                @include flex($gx : 10px);
+                @include size(100%, 100%);
+                min-width: 350px;
+                max-width : 490px;
+                @include flex($fd : column,$gx : 0px, $gy : 10px);
+                > p {
+                    @include font($f : ne, $w : 700, $s : 1.5rem, $lh : 3rem)
+                }
                 > input {
-                    @include size(60px,20px);
+                    @include size(100%, $input-height);
                     @include border($rad : 3px);
                     @include font($s : .8rem, $f : ne, $w : 700, $c : #fff);
                     background-color: rgba($color: #000, $alpha: 1);
