@@ -58,7 +58,6 @@ $point_color : #e5e1e0;
             @include pos(relative);
             @include flex($gx : 30px, $gy : 30px);
             @include padding($l : $hw_pc);
-            // @include margin($l : 20px);
             @include tablet {width : 100%}
             .hex_box {
                 $cw_pc : $cw_pc - 20px;
@@ -91,7 +90,7 @@ $point_color : #e5e1e0;
     .main_p {
         @include size($w : 100%);
         @include pos(relative);
-        @include margin($b : 30px);
+        @include margin($b : $hh_m + 30px);
         @include flex($fd : column);
         @include font($f : bi2);
         .banner {
@@ -100,7 +99,6 @@ $point_color : #e5e1e0;
             background-color: $banner_color;
             @include pos(relative);
             @include flex($a : center, $j : center);
-            // @include margin($t : $hh_m);
             > p {
                 display : inline-block;
                 letter-spacing: 10px;

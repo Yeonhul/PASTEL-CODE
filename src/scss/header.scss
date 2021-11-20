@@ -15,8 +15,8 @@ $h_point : linear-gradient(to right, #CCAACB 5%, black 5%);
 
 @include mobile {
     .header {
-        @include size($w : 100%, $h : ($hh_m/2)); //!!!!
-        background-color: $base-color;
+        @include size($w : 100%, $h : $hh_m);
+        @include pos(absolute);
         z-index : 100;
         @include flex($fd : column, $a : center);
         transition: transform .25s;
@@ -24,7 +24,7 @@ $h_point : linear-gradient(to right, #CCAACB 5%, black 5%);
             @include pos($trY : -50%);
         }
         .title {
-            @include size($w : 100%, $h : ($hh_m / 2));
+            @include size($w : 100%, $h : $hh_m);
             @include flex($a : center, $j : center);
             @include font($s : 1.5rem, $f : bi2);
             > span {

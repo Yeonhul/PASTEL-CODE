@@ -1,10 +1,5 @@
 <template>
-<!-- <transition name="demo"> -->
-    <!-- <div class="login" v-if="$store.state.login_TF"> -->
     <div class="login">
-        <!-- <div class="mobile_title" v-if="!$store.state.TF"> 모바일에서 수정할것-->
-        <!-- </div> -->
-
         <h1>PASTEL 회원 로그인</h1> 
         <form class="log_box">
             <div class="not" v-if="not_login"> <!-- 비로그인 상태 -->
@@ -28,7 +23,6 @@
             </div>
         </form>
     </div>
-<!-- </transition> -->
 </template>
 
 <script>
@@ -86,10 +80,6 @@ export default {
             }
             this.$store.dispatch('user_color', user_data);
         },
-        // login_bt() { 
-        //     history.back();
-        //     this.$store.commit('mobile_TF')
-        // },
     },
     mounted() {
     },

@@ -24,7 +24,7 @@
 
 @include mobile() {
     .menu {
-        @include size(100%, $hh_m / 2);
+        @include size(100%, $hh_m);
         @include pos(fixed, $b : 0, $l : 0);
         @include flex($a : center, $j : center);
         z-index: 100;

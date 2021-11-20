@@ -1,12 +1,10 @@
 // import { createWebHistory, createRouter } from 'vue-router'
 import { createWebHashHistory, createRouter } from 'vue-router'
-// import main from '@/views/main.vue'
-// import content1 from '@/views/content1.vue'
 
 const mainpage = () => import('@/views/main.vue'); //Lazy load
 const COLOR_LIST = () => import('@/views/content1.vue'); //Lazy load
 const pickpage = () => import('@/views/pick.vue');
-const loginpage = () => import('@/components/login.vue');
+const loginpage = () => import('@/views/login.vue');
 
 const routes = [
     {

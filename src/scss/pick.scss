@@ -49,7 +49,8 @@
     .pick_p {
         @include size(100%);
         @include pos(relative);
-        // @include padding($t : $hh_m);
+        @include padding($t : $hh_m);
+        @include margin($b : $hh_m + 30px);
         &.pick_none {
             @include size(100%, 100vh);
             > .what_pick {

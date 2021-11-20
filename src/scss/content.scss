@@ -75,11 +75,10 @@ $point_color : #e5e1e0;
                 > em {
                     @include size(24px,24px);
                     @include margin($l : 10px);
-                    @include font($s : 1.2rem, $lh : 2rem);
+                    @include font($s : 1.2rem, $lh : 2rem, $c : $point_color);
                     display : inline-block;
                     background-image: url(img/heart.png);
                     cursor: pointer;
-                    color : $point_color;
                 }
                 .pick {
                     background-position: right
@@ -127,8 +126,8 @@ $point_color : #e5e1e0;
         @include size(100%);
         @include font($f : bi);
         background-color: #fff;
-        // @include padding($t : $hh_m); 
-        @include margin($b : 30px);
+        @include padding($t : $hh_m); 
+        @include margin($b : $hh_m + 30px);
         @include pos(relative);
         .con1_search {
             @include size(250px, 30px);
