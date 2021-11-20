@@ -18,7 +18,7 @@ $point_color : #e5e1e0;
                 letter-spacing: 60px;
                 white-space: nowrap;
                 @include pos(absolute);
-                @include font($s : 3rem, $f : bi);
+                @include font($s : 3rem, $f : bi2);
                 @include tablet {
                     letter-spacing : 35px;
                     @include font($s : 1.8rem);
@@ -93,7 +93,7 @@ $point_color : #e5e1e0;
         @include pos(relative);
         @include margin($b : 30px);
         @include flex($fd : column);
-        @include font($f : bi );
+        @include font($f : bi2);
         .banner {
             @include size($w : 100%, $h : 500px);
             overflow: hidden;

@@ -114,10 +114,6 @@ $input-height : 48px;
                     @include flex($gx : 0, $gy : 10px, $fd : column, $a : center);
                     @include padding($b : 10px);
                     > input {
-                        // @include font($f : ne, $w : 700, $s : .8rem, $c : #fff);
-                        // @include size(100%, 25px);
-                        // @include border(1px, $rad : 5px, $color : #EDEAE5);
-                        // background-color: rgba($color: #000000, $alpha: 0);
                         @include font($f : ne, $w : 700, $s : .8rem);
                         @include size(100%, $input-height/1.5);
                         @include border(1px, $rad : 5px);
@@ -145,7 +141,6 @@ $input-height : 48px;
                     > input {
                         @include size(100%, $input-height/1.5);
                         @include font($f : ne);
-
                         @include border($rad : 3px,);
                         @include font($s : .8rem, $f : ne, $w : 700, $c : #fff);
                         background-color: rgba($color: #000, $alpha: 1);
@@ -154,28 +149,20 @@ $input-height : 48px;
 
             }
             .success {
+                @include size(100%);
                 @include flex($fd : column, $a : center,);
                 > p {
-                    // @include font($f : bi, $s : 1.8rem, $c : #fff);
+                    @include font($f : ne, $s : 1.8rem, $w : 700);
                     @include padding($all : 15px 0px);
                 }
                 > input {
-                    @include size(55px, 20px);
-                    // @include font($f : ne, $w : 700, $s : .8rem, $c : #fff);
-                    @include border(1px, $color : #fff, $rad : 2px,);
-                    background-color: rgba($color: #000000, $alpha: 0);
+                    @include size(100%, $input-height/1.5);
+                    @include font($f : ne);
+                    @include border($rad : 3px,);
+                    @include font($s : .8rem, $f : ne, $w : 700, $c : #fff);
+                    background-color: rgba($color: #000, $alpha: 1);
                 }
             }
         }
-    }
-
-    .demo-enter-from, .demo-leave-to {
-        transform: translateY(100%);
-    }
-    .demo-enter-to, .demo-leave-from  {
-        transform: translateY(0%);
-    }
-    .demo-enter-active, .demo-leave-active {
-        transition: all .3s;
     }
 }
