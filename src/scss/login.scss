@@ -2,16 +2,16 @@ $input-height : 48px;
 @include pc() {
     .login {
         @include size(100%, 100vh);
-        // background-color: #f9f5f2;
         @include font($f : ne, $s : 1.1rem, $lh : 1.5rem, $w : 700);
-        @include flex($a : center, $j : center);
+        @include flex($a : center, $j : center, $fd : column);
+        > h1 {
+            @include margin($b : 30px);
+        }
         .log_box {
-            z-index: 1;
             text-align: center;
-            > h1 {
-                @include margin($b : 30px);
-            }
+            @include flex($fd : column);
             .not {
+                @include size(100%, 100%);
                 min-width: 350px;
                 max-width : 490px;
                 @include flex($fd : column, $a : center, $gx : 0, $gy : 30px);
@@ -19,7 +19,7 @@ $input-height : 48px;
                     @include font($f : bi, $w : 700, $s : 1.2rem, $c : #FD475D);
                 }
                 .in_bt {
-                    @include size(100%, 100%);
+                    @include size(100%);
                     @include flex($fd : column, $gx : 0px, $gy : 10px);
                     > input {
                         @include font($f : ne, $w : 700, $s : .8rem);
@@ -36,7 +36,7 @@ $input-height : 48px;
                     }
                 }
                 .act_bt {
-                    @include size(100%, 100%);
+                    @include size(100%);
                     @include flex($gx : 0, $gy : 20px, $a : center, $fd : column);
                     @include pos(relative);
                     &::before {
@@ -87,58 +87,43 @@ $input-height : 48px;
 @include mobile() {
     .login {
         @include size($w : 100%, $h : 100vh);
-        @include pos(fixed);
-        z-index: 100;
-        background-color: rgba($color: #000000, $alpha: .7);
+        @include flex($j : center, $a : center, $fd : column, $gx : 0, $gy : 10px);
         @include landscape {
             @include flex();
         }
-        .mobile_title {
-            @include size(100%, 40vh);
-            @include flex($j : center, $a : center,);
-            @include font($f : bi, $w : 700, $s : 1.8rem, $c : #fff);
-            @include landscape {
-                @include size(50%, 100%);
-            }
-            .close {
-                @include size(100%, ($hh_m / 2));
-                @include pos(absolute, $t : 0, $l : 0);
-                @include flex($a : center);
-                > span {
-                    @include pos(absolute, $r : 5%);
-                    @include size(20px, 20px);
-                    > svg {
-                        @include pos(absolute, $t : 50%, $trX : 0%, $trY : -50%);
-                    }
-                }
-            }
-
-
+        > h1 {
+            @include font($f : ne, $w : 700, $s : 1.2rem, $lh : 2rem)
         }
         .log_box {
-            @include flex($gx : 10px, $gy : 0, $j : center);
-            @include size(100%, 60vh);
+            @include size(100%);
+            max-width: 250px;
+            @include flex($gx : 0px, $gy : 20px, $a : center,$j : center, $fd : column);
             @include landscape {
                 @include size(50%, 100%);
                 @include flex($gx : 10px, $gy : 0, $j : center, $a : center);
             }
+
             .not {
+                @include size(100%);
                 @include flex($fd : column);
                 > p {
                     @include font($f : bi, $w : 700, $s : 1.2rem, $c : #FD475D);
                     @include padding($t : 10px);
                 }
                 .in_bt {
-                    @include flex($gx : 0, $gy : 20px, $fd : column, $a : center);
+                    @include flex($gx : 0, $gy : 10px, $fd : column, $a : center);
                     @include padding($b : 10px);
                     > input {
-                        @include font($f : ne, $w : 700, $s : .8rem, $c : #fff);
-                        @include size(150px, 30px);
-                        @include border(1px, $rad : 5px, $color : #EDEAE5);
-                        background-color: rgba($color: #000000, $alpha: 0);
+                        // @include font($f : ne, $w : 700, $s : .8rem, $c : #fff);
+                        // @include size(100%, 25px);
+                        // @include border(1px, $rad : 5px, $color : #EDEAE5);
+                        // background-color: rgba($color: #000000, $alpha: 0);
+                        @include font($f : ne, $w : 700, $s : .8rem);
+                        @include size(100%, $input-height/1.5);
+                        @include border(1px, $rad : 5px);
+                        @include padding($l : 3px);
                         &::placeholder {
-                            @include padding($l : 7px);
-                            @include font($f : ne, $w : 700, $s : .6rem, $c : #EDEAE5);
+                            @include padding($l : 3px);
                         }
                         &:focus {
                             outline : none;
@@ -149,12 +134,21 @@ $input-height : 48px;
                     }
                 }
                 .act_bt {
-                    @include flex($gx : 10px, $gy : 0, $j : center);
+                    @include pos(relative);
+                    @include flex($gx : 0, $gy : 10px, $j : center, $fd : column);
+                    &::before {
+                        content : '';
+                        @include size(100%, 1px);
+                        @include pos(absolute, $t : 50%, $trX : 0, $trY : -50%);
+                        background-color: #9d9d9d;
+                    }
                     > input {
-                        @include size(55px, 20px);
-                        @include font($f : ne, $c : #fff);
-                        @include border(1px, $color : #fff, $rad : 2px,);
-                        background-color: rgba($color: #000000, $alpha: 0);
+                        @include size(100%, $input-height/1.5);
+                        @include font($f : ne);
+
+                        @include border($rad : 3px,);
+                        @include font($s : .8rem, $f : ne, $w : 700, $c : #fff);
+                        background-color: rgba($color: #000, $alpha: 1);
                     }
                 }
 
@@ -162,12 +156,12 @@ $input-height : 48px;
             .success {
                 @include flex($fd : column, $a : center,);
                 > p {
-                    @include font($f : bi, $s : 1.8rem, $c : #fff);
+                    // @include font($f : bi, $s : 1.8rem, $c : #fff);
                     @include padding($all : 15px 0px);
                 }
                 > input {
                     @include size(55px, 20px);
-                    @include font($f : ne, $w : 700, $s : .8rem, $c : #fff);
+                    // @include font($f : ne, $w : 700, $s : .8rem, $c : #fff);
                     @include border(1px, $color : #fff, $rad : 2px,);
                     background-color: rgba($color: #000000, $alpha: 0);
                 }

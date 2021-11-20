@@ -5,14 +5,14 @@
         <!-- <div class="mobile_title" v-if="!$store.state.TF"> 모바일에서 수정할것-->
         <!-- </div> -->
 
+        <h1>PASTEL 회원 로그인</h1> 
         <form class="log_box">
-            <h1>PASTEL 회원 로그인</h1>
             <div class="not" v-if="not_login"> <!-- 비로그인 상태 -->
                 <div class="in_bt">
                     <input type="text" v-model="user_id" 
                     placeholder="ID">
                     <input type="password" v-model="user_password" 
-                    placeholder="PASSWORD" autocomplete="on" @keyup.enter="login()">
+                    placeholder="PASSWORD" autocomplete="off" @keyup.enter="login()">
                 </div>
                 <div class="act_bt">
                     <input type="button" value="로그인" @click="login()"> 
@@ -24,7 +24,7 @@
             </div>
             <div class="success" v-if="!not_login"> <!-- 로그인 상태 -->
                 <p>{{ $store.state.login_check }}</p>
-                <input type="button" value="logout" @click="logout()">
+                <input type="button" value="로그아웃" @click="logout()">
             </div>
         </form>
     </div>
