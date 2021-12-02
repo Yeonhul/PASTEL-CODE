@@ -1,5 +1,5 @@
 <template>
-    <div :class="['header', {'h_E': header_TF}]">
+    <div :class="['header']">
         <div class="title">
             <h1>PASTEL</h1>
         </div>

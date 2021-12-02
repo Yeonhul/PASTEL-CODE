@@ -61,6 +61,7 @@ export default {
             document.body.removeChild(c_input);
             console.log(co);
         },
+        
         similar() {
             this.$store.commit('similar',this.sim_num);
             this.$store.commit('change_TF');
@@ -118,5 +119,6 @@ export default {
             }
         }
     },
+    
 }
 </script>

@@ -32,7 +32,7 @@ export default {
             user_id : '',
             user_password : '',
             login_errer : '',
-            aa : false,
+            // aa : false,
         }
     },
     methods : {     
