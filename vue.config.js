@@ -17,7 +17,7 @@ module.exports = {
     },
     configureWebpack: {
         plugins: [ // 플러그인
-            new webpack.ProvidePlugin({ // jquery 전역 asdasdasdasdasdsad
+            new webpack.ProvidePlugin({ // jquery 전역 선언
                 $: 'jquery',
                 jquery: 'jquery',
                 'window.jQuery': 'jquery',
